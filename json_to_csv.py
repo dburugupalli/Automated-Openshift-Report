@@ -1,17 +1,7 @@
-import csv, json, sys
-#if you are not using utf-8 files, remove the next line
-sys.setdefaultencoding("UTF-8") #set the encode to utf8
-#check if you pass the input file and output file
-if sys.argv[1] is not None and sys.argv[2] is not None: 
-    fileInput = sys.argv[1]
-    fileOutput = sys.argv[2]  
-    inputFile = open(fileInput) #open json file
-    outputFile = open(fileOutput, 'w') #load csv file
-    data = json.load(inputFile) #load json content
-    inputFile.close() #close the input file   
-    output = csv.writer(outputFile)
-    output.writerow(data[0].keys())
-    
+import csv
 
-    for row in data:
-        output.writerow(row.values()) #values row
+def make_in_csv():
+
+    with open('test.csv', 'w') as f:
+        for key in my_dict.keys():
+            f.write("%s,%s\n"%(key,my_dict[key]))
