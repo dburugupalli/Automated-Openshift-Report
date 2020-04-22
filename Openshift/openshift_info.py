@@ -3,7 +3,7 @@ from kubernetes import client, config
 from openshift.dynamic import DynamicClient
 
 
-class OpenShift(object):
+class Client(object):
     def __init__(self):
     # to run inside the openshift cluster
         if "OPENSHIFT_BUILD_NAME" in os.environ:

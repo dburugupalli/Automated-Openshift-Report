@@ -8,7 +8,7 @@ import sys
 
 app = Flask(__name__)
 
-openshift_object = openshift_info.OpenShift()
+openshift_object = openshift_info.Client()
 
 
 @app.route('/health')
