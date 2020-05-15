@@ -5,7 +5,19 @@ Automated-Openshift-Report is python flask web application to get all the OpenSh
 
 ## Requirements
 
-Should have python virtual environment [setup](https://www.tutorialspoint.com/python-virtual-environment)
+Should have python virtual environment [setup](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
+Creating virtual environment 
+
+On MacOs and Linux 
+python3 -m venv env
+py -m venv env
+
+Activating virtual environment
+
+On MacOs and Linux
+source env/bin/activate
+
 
 ##### Local Environment 
 
