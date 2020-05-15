@@ -30,6 +30,20 @@ def main():
             "services": services})
 
 
+@app.route('/pull_data/pods/<status>/<time>')
+def pull_from_object_store(time, status):
+    """
+    flask endpoint to pull the data from object store
+    """
+    filename = 'pods_' + status+'_'  + time + '.csv'
+    filepath = '/tmp/SSMT/OpenShift/' + filename 
+    os.makedirs('/tmp/SSMT/OpenShift', exist_ok=True)
+    if(helper.file_exists(filepath)):
+        return helper.convert_csv_to_json(filepath)  
+    else:
+        interface_pull.interface_pull(filename)
+        return helper.convert_csv_to_json(filepath)
+  
 def signal_term_handler(signal, frame):
     app.logger.warn('got SIGTERM')
     sys.exit(0)
