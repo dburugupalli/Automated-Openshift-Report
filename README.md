@@ -97,6 +97,10 @@ http://0.0.0.0:9000/push_to_object_store
 http://0.0.0.0:8000/get_cumulative_information
 # Purpose: Retrieve Cumulative infomation like OpenShift Nodes, Pods, PVC's, Projects etc.
 # Returns: JSON Response with names of all Nodes, Pods, PVC's, PV's, Projects in an OpenShift cluster
+http://0.0.0.0:8000/pull_data/pods/<status>/<time>
+#Purpose: Pull the data from openstack object store when status and time is provided. 
+#Returns: JSON Response with the contents of the Pods running and Failed.
+#<status> represents the data runnning, failed. <time> represents the time 
 ```
 
 ## Contributing
